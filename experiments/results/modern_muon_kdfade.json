@@ -1,0 +1,41 @@
+{
+ "name": "modern_muon_kdfade",
+ "val": 1.4601,
+ "best": 1.4601,
+ "curve": [
+  [
+   1000,
+   1.5509
+  ],
+  [
+   2000,
+   1.4601
+  ]
+ ],
+ "secs": 2765,
+ "args": {
+  "name": "modern_muon_kdfade",
+  "data": "data/input.txt",
+  "iters": 2000,
+  "batch": 32,
+  "block": 128,
+  "layers": 4,
+  "heads": 4,
+  "embd": 256,
+  "lr": 0.001,
+  "wd": 0.1,
+  "dropout": 0.1,
+  "seed": 1337,
+  "threads": 1,
+  "modern": true,
+  "muon": true,
+  "muon_lr": 0.02,
+  "ema": 0.0,
+  "input_noise": 0.0,
+  "ngram_kd": 0.1,
+  "kd_anneal": true,
+  "mtp": 0.0,
+  "save": "",
+  "eval_every": 1000
+ }
+}
