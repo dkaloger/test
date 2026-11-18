@@ -1,0 +1,45 @@
+{
+ "name": "final_modern_muon_seed2",
+ "val": 1.4565,
+ "best": 1.4565,
+ "curve": [
+  [
+   1000,
+   1.6104
+  ],
+  [
+   2000,
+   1.5073
+  ],
+  [
+   3000,
+   1.4565
+  ]
+ ],
+ "secs": 4038,
+ "args": {
+  "name": "final_modern_muon_seed2",
+  "data": "data/input.txt",
+  "iters": 3000,
+  "batch": 32,
+  "block": 128,
+  "layers": 4,
+  "heads": 4,
+  "embd": 256,
+  "lr": 0.001,
+  "wd": 0.1,
+  "dropout": 0.1,
+  "seed": 2,
+  "threads": 1,
+  "modern": true,
+  "muon": true,
+  "muon_lr": 0.02,
+  "ema": 0.0,
+  "input_noise": 0.0,
+  "ngram_kd": 0.0,
+  "kd_anneal": false,
+  "mtp": 0.0,
+  "save": "",
+  "eval_every": 1000
+ }
+}

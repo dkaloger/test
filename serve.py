@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 
 from model import load_checkpoint
 
-CKPT = os.environ.get("MODEL_PATH", "checkpoints/model.pt")
+CKPT = os.environ.get("MODEL_PATH", "checkpoints/model_v2.pt")
 torch.set_num_threads(max(1, os.cpu_count() or 1))
 
 model, tok = load_checkpoint(CKPT)

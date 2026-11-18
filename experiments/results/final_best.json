@@ -1,0 +1,45 @@
+{
+ "name": "final_best",
+ "val": 1.4606,
+ "best": 1.4606,
+ "curve": [
+  [
+   1000,
+   1.5726
+  ],
+  [
+   2000,
+   1.4942
+  ],
+  [
+   3000,
+   1.4606
+  ]
+ ],
+ "secs": 4042,
+ "args": {
+  "name": "final_best",
+  "data": "data/input.txt",
+  "iters": 3000,
+  "batch": 32,
+  "block": 128,
+  "layers": 4,
+  "heads": 4,
+  "embd": 256,
+  "lr": 0.001,
+  "wd": 0.1,
+  "dropout": 0.1,
+  "seed": 1337,
+  "threads": 1,
+  "modern": true,
+  "muon": true,
+  "muon_lr": 0.02,
+  "ema": 0.0,
+  "input_noise": 0.0,
+  "ngram_kd": 0.1,
+  "kd_anneal": true,
+  "mtp": 0.0,
+  "save": "checkpoints/model_v2.pt",
+  "eval_every": 1000
+ }
+}
