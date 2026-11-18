@@ -38,6 +38,7 @@ p.add_argument("--muon-lr", type=float, default=0.02)
 p.add_argument("--ema", type=float, default=0.0, help="EMA decay of weights, e.g. 0.999 (0=off)")
 p.add_argument("--input-noise", type=float, default=0.0, help="prob. of replacing an input char")
 p.add_argument("--ngram-kd", type=float, default=0.0, help="weight of trigram-teacher soft targets")
+p.add_argument("--kd-anneal", action="store_true", help="linearly fade KD weight to 0")
 p.add_argument("--mtp", type=float, default=0.0, help="weight of next-next-char prediction loss")
 p.add_argument("--save", default="")
 p.add_argument("--eval-every", type=int, default=1000)
@@ -276,7 +277,8 @@ for it in range(1, args.iters + 1):
     if args.ngram_kd > 0:
         teacher = tri[train_data[pos - 1] * V + train_data[pos]]  # from clean context
         kd = -(teacher * logp).sum(-1).mean()
-        loss = (1 - args.ngram_kd) * ce + args.ngram_kd * kd
+        w = args.ngram_kd * (1 - it / args.iters) if args.kd_anneal else args.ngram_kd
+        loss = (1 - w) * ce + w * kd
     if args.mtp > 0:
         y2 = train_data[pos + 2]
         lg2 = model.head(model.mtp(h))
