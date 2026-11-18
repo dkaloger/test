@@ -14,16 +14,12 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, StreamingResponse
 from pydantic import BaseModel, Field
 
-from model import GPT, GPTConfig, CharTokenizer
+from model import load_checkpoint
 
 CKPT = os.environ.get("MODEL_PATH", "checkpoints/model.pt")
 torch.set_num_threads(max(1, os.cpu_count() or 1))
 
-ck = torch.load(CKPT, map_location="cpu")
-tok = CharTokenizer(ck["chars"])
-model = GPT(GPTConfig(**ck["config"]))
-model.load_state_dict(ck["state_dict"])
-model.eval()
+model, tok = load_checkpoint(CKPT)
 
 app = FastAPI(title="tiny-gpt")
 
