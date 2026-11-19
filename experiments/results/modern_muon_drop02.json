@@ -1,0 +1,41 @@
+{
+ "name": "modern_muon_drop02",
+ "val": 1.5245,
+ "best": 1.5245,
+ "curve": [
+  [
+   1000,
+   1.6274
+  ],
+  [
+   2000,
+   1.5245
+  ]
+ ],
+ "secs": 2823,
+ "args": {
+  "name": "modern_muon_drop02",
+  "data": "data/input.txt",
+  "iters": 2000,
+  "batch": 32,
+  "block": 128,
+  "layers": 4,
+  "heads": 4,
+  "embd": 256,
+  "lr": 0.001,
+  "wd": 0.1,
+  "dropout": 0.2,
+  "seed": 1337,
+  "threads": 1,
+  "modern": true,
+  "muon": true,
+  "muon_lr": 0.02,
+  "ema": 0.0,
+  "input_noise": 0.0,
+  "ngram_kd": 0.0,
+  "kd_anneal": false,
+  "mtp": 0.0,
+  "save": "",
+  "eval_every": 1000
+ }
+}

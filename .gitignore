@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+train.log
+experiments/logs/
+santa/data/
+santa/solver
+santa/subs/
